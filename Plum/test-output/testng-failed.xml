@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [Suite1]">
+  <parameter name="password" value="admin"/>
+  <parameter name="feature" value="Messsaging"/>
+  <parameter name="browser" value="ie"/>
+  <parameter name="sysname" value="localhost"/>
+  <parameter name="url" value="http://quickfuseapps.com/"/>
+  <parameter name="username" value="admin"/>
+  <test name="Test1(failed)">
+    <parameter name="password" value="admin"/>
+    <parameter name="feature" value="Messsaging"/>
+    <parameter name="browser" value="cr"/>
+    <parameter name="sysname" value="localhost"/>
+    <parameter name="url" value="http://quickfuseapps.com/"/>
+    <parameter name="username" value="admin"/>
+    <classes>
+      <class name="com.plum.test.Messaging">
+        <methods>
+          <include name="MESSAGING01" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.plum.test.Messaging -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test name="Test2(failed)">
+    <parameter name="password" value="admin"/>
+    <parameter name="feature" value="Messsaging"/>
+    <parameter name="browser" value="ff"/>
+    <parameter name="sysname" value="localhost"/>
+    <parameter name="url" value="http://quickfuseapps.com/"/>
+    <parameter name="username" value="admin"/>
+    <classes>
+      <class name="com.plum.test.Messaging">
+        <methods>
+          <include name="MESSAGING01" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.plum.test.Messaging -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+  <test name="Test3(failed)">
+    <parameter name="password" value="admin"/>
+    <parameter name="feature" value="Messsaging"/>
+    <parameter name="browser" value="ie"/>
+    <parameter name="sysname" value="localhost"/>
+    <parameter name="url" value="http://quickfuseapps.com/"/>
+    <parameter name="username" value="admin"/>
+    <classes>
+      <class name="com.plum.test.Messaging">
+        <methods>
+          <include name="MESSAGING01" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.plum.test.Messaging -->
+    </classes>
+  </test> <!-- Test3(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

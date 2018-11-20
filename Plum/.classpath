@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="conf"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/jxl.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/selenium-server-standalone-2.48.2.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/poi-3.13/poi-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/poi-3.13/poi-examples-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/poi-3.13/poi-excelant-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/poi-3.13/poi-ooxml-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/poi-3.13/poi-scratchpad-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="/Users/i339884/Desktop/selenium/Selenium/softwares/testng-6.8.6beta/testng-6.8.6beta.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

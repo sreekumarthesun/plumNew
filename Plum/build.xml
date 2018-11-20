@@ -1,0 +1,80 @@
+<project name="plum" basedir="." default="CreateResults">
+
+	<!-- Project settings -->
+	<property name="project.title" value="plum" />
+	<property name="project.version" value=".1" />
+
+	<!-- Removes old compilations from the distribution directory. -->
+	<target name="cleanup" description="Remove old classes and jar files.">
+		<echo> message="Starting ANT file"</echo>
+		<delete dir="build" />
+		<delete dir="test-output" />
+		<delete dir="./resources/input/xml" />
+		<delete dir="./resources/output" />
+		<delete dir="./lib/logs" />
+	</target>
+	<property file="build.properties" />
+	<target name="init" depends="cleanup">
+		
+		<!-- setup classpath -->
+		<echo> message="Set class path"</echo>
+		<path id="classpath">
+			<fileset dir="${lib.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+	</target>
+
+
+	<target name="compile" depends="init">
+		<mkdir dir="./build" />
+		<mkdir dir="./build/classes" />
+		<echo message="Compiling all .java files from src directory." />
+		<javac srcdir="${src.dir}" destdir="${build.dir}/classes" includeantruntime="false" debug="true">
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${build.dir}/classes">
+			<fileset dir="${src.dir}" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="./lib/test.jar" basedir="./build/classes/">
+		</jar>
+	</target>
+
+	<target name="testpath" depends="jar">
+		<echo> message="set path for test"</echo>
+		<path id="test.classpath">
+			<path refid="classpath" />
+			<pathelement location="${build.dir}/classes" />
+			<pathelement location="conf" />
+		</path>
+	</target>
+
+	<target name="createXML" depends="testpath">
+		<echo>create XML - creation started ${build.dir}/classes</echo>
+		<mkdir dir="./resources/input/xml" />
+		<java fork="true" maxmemory="950m" classname="com.plum.utility.TestNgCreator">
+			<classpath refid="test.classpath"/>
+		</java>
+	</target>
+
+	<target name="run">
+		<exec dir="./sh" executable="cmd" os="mac">
+			<arg line="/c testng.sh" />
+		</exec>
+	</target>
+
+
+
+	<target name="CreateResults" >
+		<mkdir dir="./resources/output" />
+		<java fork="true" classname="com.plum.utility.CreateExcelFile">
+			<classpath refid="test.classpath"/>
+		</java>
+	</target>
+
+
+
+</project>
